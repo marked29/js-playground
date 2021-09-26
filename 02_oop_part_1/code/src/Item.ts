@@ -34,16 +34,5 @@ export abstract class Item implements Comparable<Item> {
     }
 
     public use(): void { }
-
-    public getId(): number { return this._id; }
-    public getValue(): number { return this._value; }
-    public getName(): string { return this._name; }
-    public getWeight(): number { return this._weight; }
-
-    public setId(id: number): void { this._id = id; }
-    public setValue(value: number): void { this._value = value; }
-    public setName(name: string): void { this._name = name; }
-    public setWeight(weight: number): void { this._weight = weight; }
-
     public reset(): void { id = 0; }
 }
