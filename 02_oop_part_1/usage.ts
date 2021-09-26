@@ -1,3 +1,8 @@
+import { Item } from './code/src/Item';
+import { ItemWeightComparator } from './code/src/ItemWeightComparator';
+import { Inventory } from './code/src/Inventory';
+import { Sword } from './code/src/Sword';
+import { Pizza } from './code/src/Pizza';
 // Create the inventory
 const inventory: Inventory = new Inventory();
 
