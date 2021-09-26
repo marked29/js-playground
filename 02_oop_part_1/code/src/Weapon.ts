@@ -3,7 +3,7 @@ import { Item } from "./Item";
 
 export abstract class Weapon extends Item {
     public MODIFIER_CHANGE_RATE: number = 0.5;
-    
+
     private _baseDamage: number;
     private _damageModifier: number = 0;
     private _baseDurability: number;
@@ -46,14 +46,16 @@ export abstract class Weapon extends Item {
     public polish(): void { };
 
     public use(): string {
-        let weaponName = this.name;
-        let theEffectiveDurability = this.getDurability();
 
-        this._baseDurability -= this.MODIFIER_CHANGE_RATE;
+        if (this._baseDurability <= 0) {
+            return `You can't use the ${this.name}, it is broken`;
+        }
 
-        let usageResult = `You use the ${weaponName}, dealing of ${this.getDamage()} damage.`;
-        if (theEffectiveDurability <= 0) {
-            usageResult += `The ${weaponName} breaks`;
+        this._baseDurability = this._baseDurability - this.MODIFIER_CHANGE_RATE;
+
+        let usageResult = `You use the ${this.name}, dealing of ${this.getDamage()} damage. `;        
+        if (this._baseDurability <= 0) {
+            usageResult += `The ${this.name} breaks`;
         }
 
         return usageResult;
