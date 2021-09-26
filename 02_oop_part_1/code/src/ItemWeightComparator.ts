@@ -4,8 +4,8 @@ import { ItemComparator } from './ItemComparator';
 export class ItemWeightComparator implements ItemComparator {
     public compare(first: Item, second: Item) : number {
         
-        const firstItemWeight = first.getWeight();
-        const secondItemWeight = second.getWeight();
+        const firstItemWeight = first.weight;
+        const secondItemWeight = second.weight;
 
         if (firstItemWeight > secondItemWeight) {
             return 1;
