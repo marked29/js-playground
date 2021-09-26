@@ -45,7 +45,7 @@ export abstract class Weapon extends Item {
     public polish(): void { };
 
     public use(): string {
-        let weaponName = this.getName();
+        let weaponName = this.name;
         let theEffectiveDurability = this.getDurability();
 
         this._baseDurability -= this.MODIFIER_CHANGE_RATE;
