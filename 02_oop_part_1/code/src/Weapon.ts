@@ -2,7 +2,8 @@
 import { Item } from "./Item";
 
 export abstract class Weapon extends Item {
-    private MODIFIER_CHANGE_RATE: number = 0.5;
+    public MODIFIER_CHANGE_RATE: number = 0.5;
+    
     private _baseDamage: number;
     private _damageModifier: number = 0;
     private _baseDurability: number;
