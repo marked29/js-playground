@@ -1,6 +1,7 @@
 import { Comparable } from './Comparable';
 
 let id = 0;
+let numberOfItems = 0;
 
 export abstract class Item implements Comparable<Item> {
     private _id: number;
@@ -32,6 +33,7 @@ export abstract class Item implements Comparable<Item> {
         this._value = value;
         this._name = name;
         this._weight = weight;
+        numberOfItems++;
     }
 
     public compareTo(other: Item): number {
@@ -52,5 +54,5 @@ export abstract class Item implements Comparable<Item> {
     }
 
     public use(): void { }
-    public reset(): void { id = 0; }
+    public reset(): void { numberOfItems = 0;}
 }
