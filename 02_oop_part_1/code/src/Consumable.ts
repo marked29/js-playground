@@ -34,8 +34,4 @@ export abstract class Consumable extends Item {
     public isSpoiled(): boolean {
         return this._spoiled;
     }
-
-    public toString(): string {
-        return super.toString();
-    }
 }
