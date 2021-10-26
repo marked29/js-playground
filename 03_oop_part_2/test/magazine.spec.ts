@@ -1,6 +1,7 @@
 import { Magazine } from '../src/Magazine';
 import { Pages } from '../src/Pages';
 import { Page } from '../src/Page';
+import { PageFactory } from '../src/PageFactory';
 
 describe('Magazine', () => {
     let sut: Magazine;
