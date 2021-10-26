@@ -1,18 +1,15 @@
 import { Page } from "./page";
-import { PagesIterableMixin } from "./PagesIterableMixin";
 
-export class PagesBase {
-    private pages: Page[];
-    
-    constructor(pages: Page[]) {
-        this.pages = pages;
+export class Pages {
+
+    constructor(private pages: Page[] = []) { }
+
+    public get(i: number): Page {
+        return this.pages[i];
     }
 
-    public get length() :number {
+    public get length(): number {
         return this.pages.length;
     }
 
 }
-
-export const Pages = PagesIterableMixin(PagesBase);
-// export type Pages =  typeof Pages;

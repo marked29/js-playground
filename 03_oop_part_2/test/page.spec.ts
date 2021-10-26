@@ -1,4 +1,4 @@
-import {Page} from '../src/page';
+import { Page } from '../src/page';
 
 describe('Page', () => {
   it('toString should return correct value', () => {

@@ -1,15 +1,15 @@
-import { Page } from "./page";
+import { Page } from './page';
+import { Pages } from './pages';
 
-type Constructor = new (...args: any[]) => {};
+export const PagesIterable = {
+  pages: new Pages([]),
 
-export function PagesIterableMixin<TBase extends Constructor>(Base: TBase) {
-  return class PagesIterableMixin extends Base {
-      [x: string]: Generator<Page, any, unknown>;
-
-     *[Symbol.iterator](): Generator<Page> {
-        console.log({ obj: this });
-        yield* this.pages;
-      };
-  };
-}
-
+  [Symbol.iterator]: function* (): Generator<Page, void, Page> {
+    let i = 0;
+    let page: Page;
+    while ((page = this.pages.get(i))) {
+      i += 1;
+      yield page;
+    }
+  },
+};

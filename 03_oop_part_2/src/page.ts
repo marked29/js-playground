@@ -1,16 +1,6 @@
+export type PageType = 'with text' | 'with article' | 'with images';
+export type PageMaterial = 'simple paper' | 'glossy paper';
+
 export class Page {
-    private pageNumber: number;
-    private pageType: string;
-    private pageMaterial: string;
-
-    constructor(pageNumber: number, pageType: string, pageMaterial: string) {
-        this.pageNumber = pageNumber;
-        this.pageType = pageType;
-        this.pageMaterial = pageMaterial;
-    }
-
-    public toString(): string {
-        return `here is page ${this.pageType} #${this.pageNumber} and it's material is ${this.pageMaterial}`;
-    }
-
+    constructor(public pageNumber: number, public pageType: PageType, public pageMaterial: PageMaterial) { }
 }

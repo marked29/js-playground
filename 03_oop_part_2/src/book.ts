@@ -1,32 +1,32 @@
-import { PagesBase } from './pages';
+import { Item } from './Item';
+import { Pages } from './Pages';
 
+export class Book extends Item {
+    constructor(private title: string, private author: string, private pages: Pages) {
+        super();
+    }
 
-// properties: “pages”, “title”, “author”
-// setters and getters for “title” and “author”
-// “toString” -> “Book: {book title} by {author} with number of pages: {number}”
-// “pages” property keeps instance of Pages class
-    //   expect(page.toString()).toEqual(`Book: Harry Potter by J. K. Rowling with number of pages: 4, here is page with text #${counter} and it\'s material is simple paper`);
+    public getTitle(): string {
+        return this.title;
+    }
 
-
-import { Pages } from "./pages";
-import { PagesIterableMixin } from "./PagesIterableMixin";
-
-export class BookBase {
-    private title: String;
-    private author: String;
-    private pages: PagesBase;
-
-    constructor(title: String, author: String, pages: PagesBase) {
+    public setTitle(title: string): void {
         this.title = title;
+    }
+
+    public getAuthor(): string {
+        return this.author;
+    }
+
+    public setAuthor(author: string): void {
         this.author = author;
-        this.pages = pages;
+    }
+
+    public getNumberOfPages(): number {
+        return this.pages.length;
     }
 
     public toString(): string {
-        return `Book:${this.title} by ${this.author} with number of pages: ${this.pages.length}, here is page with text #${this.pages} `
+        return `Book: ${this.getTitle()} by ${this.getAuthor()} with number of pages: ${this.getNumberOfPages()}`;
     }
-    
 }
-
-export const Book = PagesIterableMixin(BookBase);
-// export type Book =  typeof Book;
